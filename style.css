@@ -54,10 +54,8 @@
   width: 150px;
   height: 150px;
   border-radius: 20px;
-  background: url(./assets/summer-bg.jpg) 0 0 / cover no-repeat;
 }
-.content__boxBtn-link::before {
-  content: '';
+.content__boxBtn-svg {
   display: block;
   width: 50px;
   height: 50px;
@@ -67,7 +65,6 @@
   bottom: 0;
   right: 0;
   transform: translate(-50%);
-  background: url(./assets/icons/sun.svg) 0 0 / cover no-repeat;
 }
 .content__boxBtn-range {
   display: block;
