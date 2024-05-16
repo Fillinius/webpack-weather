@@ -3,7 +3,7 @@ const data = [
     id: 1,
     titly: 'sun',
     image: 'assets/summer-bg.jpg',
-    sound: 'assets/soundssummer.mp3',
+    sound: 'assets/sounds/summer.mp3',
     icon: 'assets/icons/sun.svg',
     active: false,
   },
@@ -17,7 +17,7 @@ const data = [
   },
   {
     id: 3,
-    titly: 'ssnowing',
+    titly: 'snowing',
     image: 'assets/winter-bg.jpg',
     sound: 'assets/sounds/winter.mp3',
     icon: 'assets/icons/cloud-snow.svg',
