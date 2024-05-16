@@ -1,0 +1,71 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.wrapper {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: url(./assets/summer-bg.jpg) 0 0 / 100% no-repeat;
+  position: absolute;
+  z-index: 1;
+}
+.weather {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  backdrop-filter: blur(5px);
+}
+.content {
+  position: absolute;
+  top: 2em;
+  z-index: 2;
+  width: 100%;
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.content-title {
+  font-weight: 800;
+  font-size: 48px;
+  color: #f06363;
+  margin-bottom: 20px;
+}
+.content__boxBtn-list {
+  list-style: none;
+  display: flex;
+}
+.content__boxBtn-item {
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+  border: 2px solid white;
+  border-radius: 20px;
+}
+
+.content__boxBtn-link {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+  background: url(./assets/summer-bg.jpg) 0 0 / cover no-repeat;
+}
+.content__boxBtn-link::before {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  bottom: 0;
+  right: 0;
+  transform: translate(-50%);
+  /* transform: translateY(90%); */
+  background: url(./assets/icons/sun.svg) 0 0 / cover no-repeat;
+}
+.range {
+  margin-top: 20px;
+}
