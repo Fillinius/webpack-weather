@@ -47,4 +47,3 @@ function render(event) {
     }
   })
 }
-console.log(data)
