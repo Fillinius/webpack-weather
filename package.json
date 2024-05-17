@@ -1,0 +1,15 @@
+{
+  "name": "webpack-homework",
+  "version": "1.0.0",
+  "description": "App weather sound",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "weather",
+    "webpack"
+  ],
+  "author": "Reviagin Vladimir",
+  "license": "ISC"
+}
