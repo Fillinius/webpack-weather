@@ -24,22 +24,26 @@ function render(event) {
   event.preventDefault()
   const idButton = event.target.id
   const bgWrap = document.querySelector('.wrapper')
-  const liActive = document.querySelector('.content__boxBtn-item')
+  // const liActive = document.querySelector('.content__boxBtn-item')
   const svgPause = document.querySelector('.content__boxBtn-svg')
 
   data.forEach((x) => {
+    const sound = document.querySelector(`.${x.title}`)
+
     // логика переключения изображения
     if (x.id === idButton) {
       bgWrap.style.background = `url(${x.image})0 0 / cover no-repeat`
 
       // логика включения звука
-      const sound = document.querySelector(`.${x.title}`)
-      liActive.classList.add('content__boxBtn-item--active')
-      console.log(liActive.hasAttribute('content__boxBtn-item--active'))
-      if (liActive.hasAttribute('content__boxBtn-item--active')) {
-        // svgPause.style.background = `url(./assets/icons/pause.svg)0 0 / cover no-repeat`
-      }
       sound.play()
+
+      // логика изменения громкости
+      const range = document.querySelector('#range')
+      range.addEventListener('change', function () {
+        sound.volume = this.value
+      })
+    } else {
+      sound.pause()
     }
   })
 }
