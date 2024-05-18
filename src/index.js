@@ -1,3 +1,6 @@
+import data from './data'
+
+document.addEventListener('DOMContentLoaded', start)
 const root = document.querySelector('#app')
 
 data.forEach((item) => {
@@ -20,7 +23,7 @@ data.forEach((item) => {
   button.append(divPause)
   button.append(audio)
   li.append(button)
-  document.querySelector('#app').append(li)
+  root.append(li)
 })
 
 function render(event) {
@@ -54,4 +57,8 @@ function render(event) {
       sound.pause()
     }
   })
+}
+
+function start() {
+  render()
 }

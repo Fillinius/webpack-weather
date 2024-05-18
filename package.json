@@ -2,14 +2,20 @@
   "name": "webpack-homework",
   "version": "1.0.0",
   "description": "App weather sound",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx webpack --mode development",
+    "build": "npx webpack --mode production"
   },
   "keywords": [
     "weather",
     "webpack"
   ],
   "author": "Reviagin Vladimir",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  }
 }
