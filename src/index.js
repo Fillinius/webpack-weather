@@ -1,7 +1,6 @@
 import data from './data'
 import './style.css'
 
-document.addEventListener('DOMContentLoaded', start)
 const root = document.querySelector('#app')
 
 data.forEach((item) => {
@@ -58,8 +57,4 @@ function render(event) {
       sound.pause()
     }
   })
-}
-
-function start() {
-  render()
 }
