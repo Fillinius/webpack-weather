@@ -1,35 +1,20 @@
-console.log('Hello  app weather')
-
 const root = document.querySelector('#app')
-root.innerHTML = ` <div class="wrapper">
-<div class="weather"></div>
-<div class="content">
-  <div>
-  <h1 class="content-title">Weather sounds</h1>
-  </div>
-  <div class="content__boxBtn">
-    <ul class="content__boxBtn-list">
-      <li class="content__boxBtn-item">
-        <a class="content__boxBtn-link " href="#">
-         <audio src="./assets/sounds/summer.mp3"></audio>
-        </a>
-      </li>
-      <li class="content__boxBtn-item">
-        <a class="content__boxBtn-link " href="#">
-         <audio src="./assets/sounds/summer.mp3"></audio>
-        </a>
-      </li>
-      <li class="content__boxBtn-item">
-        <a class="content__boxBtn-link " href="#">
-         <audio src="./assets/sounds/summer.mp3"></audio>
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div class="range">
-  <form>
-  <input type="range">
-  </form>
-  </div>
-</div>
-</div>`
+
+data.forEach((item) => {
+  console.log(item)
+  const li = document.createElement('li')
+  const button = document.createElement('button')
+  const audio = document.createElement('audio')
+  const divSvg = document.createElement('div')
+  divSvg.style.background = `url(${item.icon})0 0 / cover no-repeat`
+  divSvg.className = 'content__boxBtn-svg'
+  li.className = 'content__boxBtn-item'
+  button.className = 'content__boxBtn-link'
+  button.style.background = `url(${item.image})0 0 / cover no-repeat`
+  audio.src = item.sound
+  button.append(divSvg)
+  button.append(audio)
+  li.append(button)
+
+  document.querySelector('#app').append(li)
+})
