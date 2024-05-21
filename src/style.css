@@ -65,9 +65,13 @@
   bottom: 0;
   right: 0;
   transform: translate(-50%);
+  visibility: visible;
 }
 .content__boxBtn-svg--show {
-  display: none;
+  visibility: hidden;
+}
+.content__boxBtn-pause--show {
+  visibility: hidden;
 }
 .content__boxBtn-pause {
   display: block;
@@ -80,9 +84,7 @@
   right: 0;
   transform: translate(-50%);
   background: url(../public/assets/icons/pause.svg) 0 0 / cover no-repeat;
-}
-.content__boxBtn-pause--show {
-  display: none;
+  visibility: visible;
 }
 
 .content__boxBtn-range {
