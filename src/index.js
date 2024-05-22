@@ -8,10 +8,8 @@ data.forEach((item) => {
   const button = document.createElement('button')
   const audio = document.createElement('audio')
   const divSvg = document.createElement('div')
-  // const divPause = document.createElement('div')
   divSvg.style.background = `url(${item.icon})0 0 / cover no-repeat`
   divSvg.className = `content__boxBtn-svg svg-${item.title}`
-  // divPause.className = 'content__boxBtn-pause--show'
   li.className = 'content__boxBtn-item'
   button.className = 'content__boxBtn-link'
   button.id = item.id
@@ -19,7 +17,6 @@ data.forEach((item) => {
   audio.src = item.sound
   audio.className = item.title
   button.append(divSvg)
-  // button.append(divPause)
   button.append(audio)
   li.append(button)
   root.append(li)
@@ -42,7 +39,6 @@ data.forEach((x) => {
         sound.play()
 
         // логика изменения громкости
-
         range.addEventListener('change', function () {
           sound.volume = this.value
         })
