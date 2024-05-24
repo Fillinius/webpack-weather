@@ -1,9 +1,17 @@
 import data from './data'
 import './style.css'
 
-const root = document.querySelector('#app')
+const root = document.querySelector('#app') as HTMLElement
+interface Item {
+  id: string
+  title: string
+  image: string
+  sound: string
+  icon: string
+  active: boolean
+}
 
-data.forEach((item) => {
+data.forEach((item: Item) => {
   const li = document.createElement('li')
   const button = document.createElement('button')
   const audio = document.createElement('audio')
@@ -21,16 +29,19 @@ data.forEach((item) => {
   li.append(button)
   root.append(li)
 })
-data.forEach((x) => {
+
+data.forEach((x: Item) => {
   const liEl = document.querySelectorAll('.content__boxBtn-item')
   liEl.forEach((button) => {
     button.addEventListener('click', (event) => {
       event.preventDefault()
-      const idButton = event.target.id
-      const bgWrap = document.querySelector('.wrapper')
-      const sound = document.querySelector(`.${x.title}`)
-      const range = document.querySelector('#range')
-      const iconWeather = document.querySelector(`.svg-${x.title}`)
+      const idButton = (event.target as HTMLInputElement).id
+      const bgWrap = document.querySelector('.wrapper') as HTMLDivElement
+      const sound = document.querySelector(`.${x.title}`) as HTMLAudioElement
+      const range = document.querySelector('#range') as HTMLInputElement
+      const iconWeather = document.querySelector(
+        `.svg-${x.title}`
+      ) as HTMLDivElement
       if (x.id === idButton) {
         // логика переключения изображения
         bgWrap.style.background = `url(${x.image})0 0 / cover no-repeat`
@@ -40,7 +51,7 @@ data.forEach((x) => {
 
         // логика изменения громкости
         range.addEventListener('change', function () {
-          sound.volume = this.value
+          sound.volume = parseFloat(this.value)
         })
 
         // логика переключения иконки
