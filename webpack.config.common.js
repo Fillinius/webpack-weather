@@ -11,6 +11,9 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js', 'jsx'],
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve('./public/index.html'),
@@ -72,6 +75,11 @@ module.exports = {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
 
         type: 'asset/resource',
+      },
+      {
+        test: /\.[tj]sx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
       },
     ],
   },
